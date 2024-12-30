@@ -8,9 +8,9 @@ public class DbHelper {
     //Singleton Design Pattern
     public static DbHelper instance = null;
     private Connection connection = null;
-    public static final String DB_URL = "jdbc:mysql://localhost:3307/customermanage";
-    public static final String DB_USER = "root";
-    public static final String DB_PASSWORD = "";
+    public static final String DB_URL;
+    public static final String DB_USER;
+    public static final String DB_PASSWORD;
 
     //constructor
     public DbHelper() {
