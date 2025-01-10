@@ -1,7 +1,7 @@
 # Order Management System
 
 ### Proje Tanımı
-Bu proje, bir **Sipariş Yönetim Sistemi** oluşturmak amacıyla geliştirilmiştir. Masaüstü uygulaması, kullanıcıların sisteme giriş yaparak müşteri, ürün ve sipariş yönetimi işlemlerini kolayca gerçekleştirebilecekleri bir ortam sunar.
+Bu proje, siparişleri yönetmeye olanak tanıyan bir **Sipariş Yönetim Sistemi** oluşturmak amacıyla geliştirilmiştir. Kullanıcıların müşteri, ürün ve sipariş işlemlerini kolayca yapabildiği modern bir masaüstü uygulamasıdır.
 
 ---
 
@@ -34,16 +34,52 @@ Bu proje, bir **Sipariş Yönetim Sistemi** oluşturmak amacıyla geliştirilmi�
 
 - **Java**: Uygulamanın geliştirilmesi.
 - **Swing**: Masaüstü grafik arayüzü oluşturma.
-- **Veritabanı**: Müşteri, ürün ve sipariş bilgilerini saklama ve yönetme.
+- **Veritabanı(MySql)**: Müşteri, ürün ve sipariş bilgilerini saklama ve yönetme.
 
 ---
 
 ### Kod Mimarisi
 
-- **Kurumsal Mimari**: Proje, düzenli ve ölçeklenebilir bir yapı için kurumsal mimariye uygun şekilde tasarlandı.
+- **Kurumsal Mimari**: Proje, düzenli ve sürdürülebilir bir yapı için kurumsal mimariye uygun şekilde tasarlandı. Aşağıda projenin katmanlı yapısını gösteren bir özet bulunmaktadır:
+  
+```
+src
+├── business
+│   ├── BasketController
+│   ├── CartController
+│   ├── CustomerController
+│   ├── ProductController
+│   └── UserController
+├── core
+│   ├── DbHelper
+│   ├── Helper
+│   └── Item
+├── dao
+│   ├── BasketDao
+│   ├── CartDao
+│   ├── CustomerDao
+│   ├── ProductDao
+│   └── UserDao
+├── entity
+│   ├── Basket
+│   ├── Cart
+│   ├── Customer
+│   ├── Product
+│   └── User
+└── view
+    ├── CartUI
+    ├── CustomerUI
+    ├── DashboardUI
+    ├── LoginUI
+    └── ProductUI
+```
+    
 - **Clean Code Prensipleri**: Kodun okunabilirliği ve sürdürülebilirliği için temiz kod yazımı benimsendi.
+- 
 - **Singleton Design Pattern**: Tekil sınıflar için Singleton tasarım deseni kullanıldı.
+  
 - **Özel Veri Tipi**: `ITEM` adlı özel bir veri tipi oluşturularak `ComboBox` gibi bileşenlerde kullanıldı.
+  
 - **Metod Bazlı Operasyonlar**: İşlemler küçük metodlara bölünerek düzenli ve sürdürülebilir bir yapı elde edildi.
 
 ---
@@ -59,9 +95,18 @@ Bu proje, bir **Sipariş Yönetim Sistemi** oluşturmak amacıyla geliştirilmi�
 
 ---
 
-### Projeyi Çalıştırma
+## Kurulum ve Çalıştırma
 
-1. **Depoyu Klonlayın:**
-   ```bash
-   git clone https://github.com/baranar/Order-Management-System.git
+1. **Gereksinimler:**
+   - Java 8 veya üzeri.
+   - Bir IDE (IntelliJ IDEA, Eclipse vb.).
+   - Veritabanı için bir yönetim aracı (MySQL, PostgreSQL vb.).
+
+2. **Kurulum Adımları:**
+   - Bu projeyi klonlayın: `git clone https://github.com/baranar/Order-Management-System.git`
+   - Projeyi IDE'nize yükleyin.
+   - Veritabanı yapılandırmasını `DbHelper` sınıfında ayarlayın.
+   - Uygulamayı çalıştırın ve giriş ekranından sisteme giriş yapın.
+
+---
 
